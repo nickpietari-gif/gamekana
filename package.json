@@ -1,0 +1,23 @@
+{
+  "name": "hiragana-aero",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Local-first desktop game for learning Japanese hiragana",
+  "main": "desktopApp/main.cjs",
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "dev": "npm run build && electron .",
+    "start": "npm run dev",
+    "test": "npm run build && node --test tests/*.test.mjs tests/*.test.cjs",
+    "check": "npm run build && node --test tests/*.test.mjs tests/*.test.cjs && python3 -m unittest discover -s tests -p 'test_*.py' -v",
+    "archive": "sh ./archive.sh"
+  },
+  "devDependencies": {
+    "electron": "44.7.0",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
